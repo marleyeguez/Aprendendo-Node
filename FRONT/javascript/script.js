@@ -7,7 +7,7 @@ function listarPedidos() {
     lista.innerHTML = "Carregando pedidos...";
       
    // Faz uma requisição para a API com a url dela publicada (ou local) 
-    fetch("https://aprendendo-node-2x2k.onrender.com/pedidos") 
+    fetch("https://aprendendo-node-2x2k.onrender.com") 
     // Converte a resposta da API para JSON
     .then(res => res.json())
 
@@ -41,7 +41,7 @@ function cadastrarPedido() {
     const produto = document.getElementById('produto').value;
 
     // Envia uma requisição POST para a API
-    fetch("https://aprendendo-node-2x2k.onrender.com/pedidos", {
+    fetch("https://aprendendo-node-2x2k.onrender.com", {
     method: "POST",
     // Informa que os dados enviados estão no formato JSON
     headers: {
@@ -78,7 +78,7 @@ function atualizarPedido() {
     // Pega o novo status do pedido digitado no input
     const status = document.getElementById("statusAtualizar").value;
 
-    fetch("https://aprendendo-node-2x2k.onrender.com/pedidos", {
+    fetch("https://aprendendo-node-2x2k.onrender.com", {
         method: "PUT",
         headers: {
             'Content-Type': 'application/JSON'
@@ -111,7 +111,7 @@ function atualizarPedido() {
         // Pega o ID digitado
         const id = Number(document.getElementById("idRemover").value);
 
-        fetch("https://aprendendo-node-2x2k.onrender.com/pedidos", {
+        fetch("https://aprendendo-node-2x2k.onrender.com", {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/JSON'
