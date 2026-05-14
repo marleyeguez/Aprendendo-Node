@@ -34,7 +34,7 @@ const server = http.createServer((req,res) => {
     const metodo = req.method;
 
     // Liberação do CORS
-    res.setHeader("Acces-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Acess-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
     res.setHeader("Acess-Control-Allow-Headers", "Content-Type");
 
