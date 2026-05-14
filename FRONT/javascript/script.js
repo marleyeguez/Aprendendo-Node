@@ -9,7 +9,7 @@ function listarPedidos() {
    // Faz uma requisição para a API com a url dela publicada (ou local) 
     fetch("https://aprendendo-node-2x2k.onrender.com") 
     // Converte a resposta da API para JSON
-    .then(res = res.json())
+    .then(res => res.json())
 
     .then(resultado => {
         // Limpando a lista para preencher com os pedidos
@@ -58,8 +58,8 @@ function cadastrarPedido() {
     // Converte a resposta da API para JSON
     .then(() => {
         // Limpa os inputs após o envio do cadastro
-        document.getElementById("cliente"),value = "";
         document.getElementById("cliente").value = "";
+        document.getElementById("produto").value = "";
         
         // Atualizando a lista na tela
         listarPedidos();
@@ -80,7 +80,7 @@ function atualizarPedido() {
 
     fetch("https://aprendendo-node-2x2k.onrender.com", {
         method: "PUT",
-        header: {
+        headers: {
             'Content-Type': 'application/JSON'
         },
         // Envia o ID e novo status do pedido
@@ -92,7 +92,7 @@ function atualizarPedido() {
     .then(res => res.json())
 
     // Depois que atualizar, buscará a lista novamente
-    .them(() => {
+    .then(() => {
         // Limpando os campos após o envio
         document.getElementById("idAtualizar").value = "";
         document.getElementById("statusAtualizar").value = ""
